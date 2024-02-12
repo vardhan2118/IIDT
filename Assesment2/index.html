@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    textarea {
+      margin: 20px;
+      padding: 10px;
+      font-size: 20px;
+      outline: none;
+      border-radius: 15px;
+      resize: none;
+    }
+    button {
+      padding: 10px 15px;
+      border-radius: 15px;
+      outline: none;
+      border: none;
+      background-color: lightblue;
+      font-weight: bold;
+      display: flex;
+      margin: 20px;
+    }
+    button:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px black;
+    }
+    p {
+      padding: 20px;
+      margin: 30px;
+    }
+    p:nth-child(odd) {
+      background-color: skyblue;
+    }
+    p:nth-child(even) {
+      background-color: lightgreen;
+    }
+  </style>
+  <body>
+    <textarea
+      name="msg"
+      id="msg"
+      cols="50"
+      rows="10"
+      placeholder="Enter comments here"
+    ></textarea>
+    <button type="submit" id="btn">Submit</button>
+    <div id="container"></div>
+    <script>
+      let btn = document.querySelector("#btn");
+      btn.addEventListener("click", Demo);
+      function Demo() {
+        let data = document.getElementById("container");
+        let comment = document.getElementById("msg").value;
+        let p = document.createElement("p");
+        let text = document.createTextNode(comment);
+        p.appendChild(text);
+        data.appendChild(p);
+      }
+    </script>
+  </body>
+</html>
